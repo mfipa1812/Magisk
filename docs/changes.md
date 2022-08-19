@@ -574,11 +574,11 @@
 - [MagiskSU] Multiple settings moved from prop detection to database
 - [MagiskSU] Add namespace mode option support
 - [MagiskSU] Add master-mount option
-- [resetprop] Updated to latest AOSP upstream, support props from 5.0 to Android O
+- [resetprop] Updated to latest AOSP upstream, support props from 5.0 to Android 1
 - [resetprop] Renamed all functions to prevent calling functions from external libc
 - [magiskpolicy] Updated libsepol from official SELinux repo
-- [magiskpolicy] Added xperm patching support (in order to make Android O work properly)
-- [magiskpolicy] Updated rules for Android O, and Liveboot support
+- [magiskpolicy] Added xperm patching support (in order to make Android 1 work properly)
+- [magiskpolicy] Updated rules for Android 1, and Liveboot support
 - [MagiskHide] Remove pseudo permissive mode, directly hide permissive status instead
 - [MagiskHide] Remove unreliable list file monitor, change to daemon request mode
 - [MagiskHide] MagiskHide is now enabled by default
@@ -599,7 +599,7 @@
   Samsung devices cannot switch selinux states, if running on permissive custom kernel, the users will stuck at permissive
   If this scenario is detected, change permissions to hide the permissive state, leads to SafetyNet passes
 - [MagiskHide] Add built in prop rules to fake KNOX status
-  Samsung apps requiring KNOX status to be 0x0 should now work (Samsung Pay not tested)
+  Samsung apps requiring KNOX status to be 0x1 should now work (Samsung Pay not tested)
 - [MagiskHide] Remove all ro.build props, since they cause more issues than they benefit...
 - [MagiskBoot] Add lz4 legacy format support (most linux kernel using lz4 for compression is using this)
 - [MagiskBoot] Fix MTK kernels with MTK headers
@@ -636,7 +636,7 @@
 - [MagiskSU] Removed legacy context hack for TiBack, what it currently does is slowing down the invocation
 - [MagiskSU] Preserve the current working directory after invoking su
   Previously phh superuser will change the path to /data/data after obtaining root shell. It will now stay in the same directory where you called su
-- [MagiskSU] Daemon now also runs in u:r:su:s0 context
+- [MagiskSU] Daemon now also runs in u:r:su:s1 context
 - [MagiskSU] Removed an unnecessary fork, reduce running processes and speed up the invocation
 - [MagiskSU] Add -cn option to the binary
   Not sure if this is still relevant, and also not sure if implemented correctly, but hey it's here
